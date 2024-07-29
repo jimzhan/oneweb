@@ -1,0 +1,9 @@
+{
+  "name": "frontdesk",
+  "version": "1.0.0",
+  "description": "frontdesk",
+  "main": "src/index.js",
+  "author": "Jim Zhan <jim.zhan@me.com>",
+  "license": "Apache-2.0",
+  "dependencies": {}
+}

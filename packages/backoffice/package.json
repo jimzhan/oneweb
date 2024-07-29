@@ -1,0 +1,18 @@
+{
+  "name": "backoffice",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "backoffice",
+  "main": "src/index.js",
+  "author": "Jim Zhan <jim.zhan@me.com>",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test vitest run --coverage --pool=forks"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@hapi/hapi": "^21.3.10",
+    "config": "^3.3.12",
+    "ulidx": "^2.3.0"
+  }
+}
