@@ -17,9 +17,11 @@
     "@hapi/hapi": "^21.3.10",
     "config": "^3.3.12",
     "exiting": "^7.0.0",
+    "joi": "^17.13.3",
     "ulidx": "^2.3.0"
   },
   "devDependencies": {
+    "better-sqlite3": "^11.1.2",
     "nodemon": "^3.1.4"
   }
 }
