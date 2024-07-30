@@ -1,2 +1,7 @@
-// local devlopment settings.
-
+# local devlopment settings.
+server:
+  routes:
+    cors:
+      origin: ['localhost:8000']
+      credentials: true
+    security: true

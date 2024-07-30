@@ -1,1 +1,1 @@
-// settings for test ONLY <`process.env.NODE_ENV=test`>.
+# settings for test ONLY <`process.env.NODE_ENV=test`>.

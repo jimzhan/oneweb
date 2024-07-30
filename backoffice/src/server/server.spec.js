@@ -1,6 +1,6 @@
 import config from 'config'
 import { describe, expect, it } from 'vitest'
-import * as server from './index.js'
+import * as server from './server.js'
 
 describe('server', () => {
   it('should start a server', async () => {

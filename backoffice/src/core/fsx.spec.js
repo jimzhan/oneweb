@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest'
-
 import * as fsx from './fsx.js'
 
 describe('fsx.js', () => {
@@ -9,5 +8,6 @@ describe('fsx.js', () => {
 
   it('should dynamically get the dirname', async () => {
     expect(fsx.dirname(import.meta).endsWith('core')).toBe(true)
+    expect(fsx.dirname(import.meta, '..').endsWith('src')).toBe(true)
   })
 })

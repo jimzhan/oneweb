@@ -1,4 +1,7 @@
-// settings for UAT deployment <`process.env.NODE_CONFIG_ENV=uat`>.
-module.exports = {
-  debug: false
-}
+# settings for UAT deployment <`process.env.NODE_CONFIG_ENV=uat`>.
+server:
+  routes:
+    cors:
+      origin: ['uat.example.com']
+      credentials: true
+    security: true
