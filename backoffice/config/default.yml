@@ -1,0 +1,17 @@
+# settings shared across different environments.
+# HAPI server default options.
+server:
+  host: 0.0.0.0
+  port: 8000
+
+  router:
+    isCaseSensitive: false
+    stripTrailingSlash: false
+
+  state:
+    strictHeader: true
+    ignoreErrors: false
+    isSecure: false
+    isHttpOnly: true
+    isSameSite: 'None'
+    encoding: 'None'

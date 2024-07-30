@@ -1,0 +1,4 @@
+// settings for UAT deployment <`process.env.NODE_CONFIG_ENV=uat`>.
+module.exports = {
+  debug: false
+}

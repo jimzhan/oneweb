@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
+    "@hapi/glue": "^9.0.1",
     "@hapi/hapi": "^21.3.10",
     "config": "^3.3.12",
+    "exiting": "^7.0.0",
     "ulidx": "^2.3.0"
   }
 }

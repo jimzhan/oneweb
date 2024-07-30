@@ -1,5 +1,5 @@
-import { expect, test } from 'vitest'
 import { isValid } from 'ulidx'
+import { expect, test } from 'vitest'
 import Key from './key.js'
 
 test('db.Key()', () => {
