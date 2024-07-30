@@ -8,6 +8,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "start": "node src/index.js",
+    "watch": "nodemon src/index.js",
     "test": "cross-env NODE_ENV=test vitest run --coverage --pool=forks"
   },
   "dependencies": {
@@ -17,5 +18,8 @@
     "config": "^3.3.12",
     "exiting": "^7.0.0",
     "ulidx": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
   }
 }

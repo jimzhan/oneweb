@@ -13,6 +13,8 @@
   "repository": "https://github.com/jimzhan/oneweb.git",
   "author": "Jim Zhan <jim.zhan@me.com>",
   "scripts": {
+    "start": "yarn workspace backoffice start",
+    "watch": "yarn workspace backoffice watch",
     "test": "yarn workspace backoffice test"
   },
   "devDependencies": {
