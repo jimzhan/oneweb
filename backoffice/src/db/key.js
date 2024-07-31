@@ -1,5 +1,4 @@
-import { monotonicFactory } from 'ulidx'
+import { ObjectId } from 'bson'
 
-const monotonic = monotonicFactory()
+export default () => new ObjectId().toHexString()
 
-export default () => monotonic(Date.now()).toLowerCase()

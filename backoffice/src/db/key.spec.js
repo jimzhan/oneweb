@@ -1,10 +1,8 @@
-import { isValid } from 'ulidx'
+import { ObjectId } from 'bson'
 import { expect, test } from 'vitest'
 import Key from './key.js'
 
 test('db.Key()', () => {
   const id = Key()
-  expect(isValid(id)).toBeTruthy()
-  expect(id.length).toBe(26)
-  expect(Key() > id).toBe(true)
+  expect(ObjectId.isValid(id)).toBeTruthy()
 })
