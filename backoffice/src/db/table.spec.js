@@ -10,7 +10,7 @@ describe('Table', () => {
   })
 
   it('should insert a new record', async () => {
-    const results = await table.insert({ username: `${Key()}@test.com`, password: 'password' }, ['id'])
+    const results = await table.insert({ username: `${Key()}@test.com`, password: 'password' }).returning(['id'])
     expect(results).not.toBeNull()
     expect(Array.isArray(results)).toBeTruthy()
     expect(results.length).toBe(1)
@@ -22,7 +22,7 @@ describe('Table', () => {
       { username: `${Key()}@test.com`, password: 'password' },
       { username: `${Key()}@test.com`, password: 'password' }
     ]
-    const ids = await table.insert(values, ['id'])
+    const ids = await table.insert(values).returning(['id'])
     expect(ids.length).toBe(2)
     expect(ids.every(item => Object.hasOwn(item, 'id'))).toBeTruthy()
   })

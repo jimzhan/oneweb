@@ -5,11 +5,11 @@ export default class Table {
     this.table = db(name)
   }
 
-  async insert(data, returning, options) {
+  insert(data) {
     const values = Array.isArray(data)
       ? data.map(item => Object.assign(item, { id: Key() }))
       : Object.assign(data, { id: Key() })
-    return await this.table.insert(values, returning, options)
+    return this.table.insert(values)
   }
 
   where(column, operator, value) {
