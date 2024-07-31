@@ -5,5 +5,9 @@
   "main": "src/index.js",
   "author": "Jim Zhan <jim.zhan@me.com>",
   "license": "Apache-2.0",
+  "scripts": {
+    "infra:up": "docker-compose -f ./nginx/docker-compose.yml up -d",
+    "infra:stop": "docker-compose -f ./nginx/docker-compose.yml stop"
+  },
   "dependencies": {}
 }
