@@ -1,9 +1,0 @@
-# local devlopment settings.
-stage: localhost
-
-server:
-  routes:
-    cors:
-      origin: [localhost:8000]
-      credentials: true
-    security: true

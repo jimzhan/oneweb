@@ -4,6 +4,7 @@ stage: uat
 server:
   routes:
     cors:
-      origin: ['uat.example.com']
+      origin:
+        - uat.example.com
       credentials: true
     security: true

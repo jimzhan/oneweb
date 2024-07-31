@@ -1,0 +1,20 @@
+# local devlopment settings.
+db:
+  client: better-sqlite3
+  useNullAsDefault: true
+  connection:
+    filename: ./test.sqlite3
+    options :
+      readonly: false
+  migrations:
+    directory: ./db/migrations
+  seeds:
+    directory: ./db/seeds
+
+server:
+  routes:
+    cors:
+      origin:
+        - localhost:8000
+      credentials: true
+    security: true

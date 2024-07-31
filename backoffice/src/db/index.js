@@ -1,1 +1,1 @@
-export { default as Key } from './key.js'
+export * from './db.js'

@@ -1,2 +1,10 @@
 # settings for test ONLY <`process.env.NODE_ENV=test`>.
 stage: test
+
+db:
+  client: better-sqlite3
+  useNullAsDefault: true
+  connection:
+    filename: ./test.sqlite3
+    options :
+      readonly: false

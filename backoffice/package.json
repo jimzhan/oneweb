@@ -7,9 +7,15 @@
   "author": "Jim Zhan <jim.zhan@me.com>",
   "license": "Apache-2.0",
   "scripts": {
+    "db:init": "yarn migrate && yarn seed",
+    "db:sync": "knex migrate:latest",
+    "db:new": "knex migrate:make",
+    "db:up": "knex migrate:up",
+    "db:down": "knex migrate:down",
+    "db:rollback": "knex migrate:rollback",
     "lint": "eslint --fix --ignore-path .eslintignore",
     "start": "node src/index.js",
-    "watch": "cross-env NODE_CONFIG_ENV=localhost nodemon src/index.js",
+    "watch": "cross-env NODE_ENV=development nodemon src/index.js",
     "test": "cross-env NODE_ENV=test vitest run --coverage --pool=forks"
   },
   "dependencies": {

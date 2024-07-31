@@ -1,7 +1,7 @@
 # settings shared across different environments.
 # HAPI server default options.
 server:
-  host: '0.0.0.0'
+  host: 0.0.0.0
   port: 8000
 
   router:
@@ -10,7 +10,8 @@ server:
 
   routes:
     cors:
-      origin: '*'
+      origin:
+        - '*'
       credentials: false
     security: true
 
@@ -19,5 +20,5 @@ server:
     ignoreErrors: false
     isSecure: true
     isHttpOnly: true
-    isSameSite: 'Strict'
-    encoding: 'none'
+    isSameSite: Strict
+    encoding: none
