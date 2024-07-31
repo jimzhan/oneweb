@@ -27,6 +27,7 @@ An opinionated Web application startup kit with a set of best practices.
 - [ ] Kafka Connector
 - [ ] i18n Support
 - [ ] Standard Log (refer to [AWS Logging](https://docs.aws.amazon.com/prescriptive-guidance/latest/logging-monitoring-for-application-owners/event-attributes.html))
+- [ ] Server-Sent Event supports
 
 
 ## Bootstrap

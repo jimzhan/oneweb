@@ -1,4 +1,6 @@
 # settings for UAT deployment <`process.env.NODE_CONFIG_ENV=uat`>.
+stage: uat
+
 server:
   routes:
     cors:
