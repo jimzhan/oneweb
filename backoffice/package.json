@@ -7,7 +7,7 @@
   "author": "Jim Zhan <jim.zhan@me.com>",
   "license": "Apache-2.0",
   "scripts": {
-    "db:init": "yarn migrate && yarn seed",
+    "db:init": "yarn db:sync",
     "db:sync": "knex migrate:latest",
     "db:new": "knex migrate:make",
     "db:up": "knex migrate:up",
@@ -16,12 +16,14 @@
     "lint": "eslint --fix --ignore-path .eslintignore",
     "start": "node src/index.js",
     "watch": "cross-env NODE_ENV=development nodemon src/index.js",
+    "pretest": "npm run db:init",
     "test": "cross-env NODE_ENV=test vitest run --coverage --pool=forks"
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
     "@hapi/glue": "^9.0.1",
     "@hapi/hapi": "^21.3.10",
+    "argon2": "^0.40.3",
     "bson": "^6.8.0",
     "config": "^3.3.12",
     "exiting": "^7.0.0",
