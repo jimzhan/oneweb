@@ -1,4 +1,6 @@
 # local devlopment settings.
+stage: localhost
+
 db:
   client: better-sqlite3
   useNullAsDefault: true
@@ -6,10 +8,6 @@ db:
     filename: ./test.sqlite3
     options :
       readonly: false
-  migrations:
-    directory: ./db/migrations
-  seeds:
-    directory: ./db/seeds
 
 server:
   routes:

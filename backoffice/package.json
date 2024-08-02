@@ -14,8 +14,8 @@
     "db:down": "knex migrate:down",
     "db:rollback": "knex migrate:rollback",
     "lint": "eslint --fix --ignore-path .eslintignore",
-    "start": "node src/index.js",
-    "watch": "cross-env NODE_ENV=development nodemon src/index.js",
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "watch": "cross-env NODE_CONFIG_ENV=localhost nodemon src/index.js",
     "pretest": "npm run db:init",
     "test": "cross-env NODE_ENV=test vitest run --coverage --pool=forks"
   },

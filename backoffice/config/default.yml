@@ -1,4 +1,10 @@
 # settings shared across different environments.
+db:
+  migrations:
+    directory: ./db/migrations
+  seeds:
+    directory: ./db/seeds
+
 # HAPI server default options.
 server:
   host: 0.0.0.0

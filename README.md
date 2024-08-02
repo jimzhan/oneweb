@@ -45,7 +45,7 @@ yarn workspace backoffice db:init
 ├── config                                  # Configuration
 │   ├── custom-environment-variables.yml    # Custom environment variables with highest priority.
 │   ├── default.yml                         # default settings shared across all environments & deployments.
-│   ├── local.yml                           # local devlopment settings.
+│   ├── localhost.yml                       # `process.env.NODE_CONFIG_ENV=localhost`local devlopment settings.
 │   ├── test.yml                            # `process.env.NODE_ENV=test`.
 │   ├── uat.yml                             # `process.env.NODE_ENV=production` and `process.env.NODE_CONFIG_ENV=uat`.
 ├── db                                      # db's seeds and migrations.
