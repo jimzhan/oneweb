@@ -37,6 +37,7 @@ describe('auth.service.spec.js#authenticate()', () => {
 
   it('authenticate() with wrong password', async () => {
     const login = await authenticate(username, 'wrongpassword')
+    expect(login.user).not.toBeNull()
     expect(login.authenticated).toBeFalsy()
   })
 })
