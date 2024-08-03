@@ -1,6 +1,12 @@
 # settings for test ONLY <`process.env.NODE_ENV=test`>.
 stage: test
 
+cache:
+  name: RedisCache
+  adapter: redis
+  options:
+    partition: hapi-cache
+
 db:
   client: better-sqlite3
   useNullAsDefault: true
