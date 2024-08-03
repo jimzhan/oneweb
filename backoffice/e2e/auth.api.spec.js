@@ -3,11 +3,10 @@ import status from 'http-status'
 import { Key } from '../src/db/index.js'
 import { secret } from '../src/core/index.js'
 import { User } from '../src/apps/auth/auth.models.js'
-import { compose } from '../src/server/index.js'
+import { asmt } from '../src/server/index.js'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
 describe('AuthApi', async () => {
-  const server = await compose()
   const username = `${Key()}@test.com`
   const password = 'password'
 
@@ -23,9 +22,7 @@ describe('AuthApi', async () => {
   })
 
   it('should authenticate a valid user', async () => {
-    const response = await server.inject({
-      url: '/sessions',
-      method: 'POST',
+    const response = await asmt.post('/sessions', {
       payload: { username, password }
     })
     expect(response.statusCode).toBe(status.CREATED)
@@ -35,9 +32,7 @@ describe('AuthApi', async () => {
   })
 
   it('should fail to authenticate user with wrong login', async () => {
-    const response = await server.inject({
-      url: '/sessions',
-      method: 'POST',
+    const response = await asmt.post('/sessions', {
       payload: { username: '404@test.com', password: 'password' }
     })
     expect(response.statusCode).toBe(status.UNAUTHORIZED)

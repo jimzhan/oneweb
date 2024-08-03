@@ -7,7 +7,11 @@ export default defineConfig({
   test: {
     watch: false,
     include: ['./(e2e|src)/**/*.spec.js'],
-    exclude: ['./src/**/index.js', ...configDefaults.exclude],
+    exclude: [
+      './src/**/index.js',
+      './src/server/asmt.js',
+      ...configDefaults.exclude
+    ],
     reporters: ['default'],
     testTimeout: timeout,
     hookTimeout: timeout,
@@ -15,7 +19,11 @@ export default defineConfig({
       enabled: true,
       provider: 'istanbul',
       include: ['src/**'],
-      exclude: ['src/**/index.js', 'src/**/*.spec.js'],
+      exclude: [
+        'src/**/index.js',
+        'src/**/*.spec.js',
+        'src/server/asmt.js'
+      ],
       reporter: ['text', 'json', 'html']
     }
   }
