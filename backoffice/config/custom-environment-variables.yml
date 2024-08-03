@@ -1,0 +1,4 @@
+yar:
+  cookieOptions:
+    password: YAR_COOKIE_PASSWORD
+

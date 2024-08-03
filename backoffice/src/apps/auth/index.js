@@ -12,7 +12,7 @@ export default {
     server.route([
       {
         method: 'POST',
-        path: '/login',
+        path: '/sessions',
         options: {
           auth: false,
           tags: ['api'],
@@ -21,8 +21,8 @@ export default {
         }
       },
       {
-        method: 'POST',
-        path: '/logout',
+        method: 'DELETE',
+        path: '/sessions',
         options: {
           auth: false,
           tags: ['api'],

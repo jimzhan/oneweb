@@ -1,19 +1,21 @@
 import { configDefaults, defineConfig } from 'vitest/config'
 
+const timeout = 30000
+
 export default defineConfig({
   globalSetup: './vitest.setup.js',
   test: {
     watch: false,
-    include: ['./src/**/*.spec.js', './e2e/**/*.spec.js'],
+    include: ['./(e2e|src)/**/*.spec.js'],
     exclude: ['./src/**/index.js', ...configDefaults.exclude],
     reporters: ['default'],
-    testTimeout: 30000,
-    hookTimeout: 30000,
+    testTimeout: timeout,
+    hookTimeout: timeout,
     coverage: {
       enabled: true,
       provider: 'istanbul',
       include: ['src/**'],
-      exclude: ['src/**/index.js'],
+      exclude: ['src/**/index.js', 'src/**/*.spec.js'],
       reporter: ['text', 'json', 'html']
     }
   }
