@@ -57,7 +57,6 @@ yarn workspace backoffice db:init
 │   │   │   ├── auth.api.js                 # Auth API
 │   │   │   ├── auth.consts.js              # Auth Constants.
 │   │   │   └── auth.models.js              # Auth Models Definitions.
-│   │   │   └── auth.repos.js               # Auth Repositories for Data Access Abstractions.
 │   │   │   ├── auth.schema.js              # Auth I/O schema.
 │   │   │   ├── auth.services.js            # Auth services based on Repositories.
 │   │   │   └── index.js                    # Auth routes.

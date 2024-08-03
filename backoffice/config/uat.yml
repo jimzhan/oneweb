@@ -1,4 +1,4 @@
-# settings for UAT deployment <`process.env.NODE_CONFIG_ENV=uat`>.
+# settings for UAT deployment <`process.env.NODE_ENV=production && `process.env.NODE_CONFIG_ENV=uat`>.
 stage: uat
 
 server:

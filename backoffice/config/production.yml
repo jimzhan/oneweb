@@ -1,4 +1,4 @@
-# settings for production deployment <`process.env.NODE_CONFIG_ENV=production`>.
+# settings for production deployment <`process.env.NODE_ENV=production && process.env.NODE_CONFIG_ENV=production`>.
 stage: production
 
 cache:

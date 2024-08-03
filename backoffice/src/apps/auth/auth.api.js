@@ -1,4 +1,3 @@
-
 export const login = (_, h) => {
   return h.response({ data: '<token>' }).code(200)
 }
