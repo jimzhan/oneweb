@@ -1,4 +1,13 @@
+############################################################
 # settings shared across different environments.
+############################################################
+# custom cache adaptor for env - based cache engine.
+cache:
+  name: MemoryCache
+  adapter: memory
+  options:
+    partition: hapi-cache
+
 db:
   migrations:
     directory: ./db/migrations

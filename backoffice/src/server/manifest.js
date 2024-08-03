@@ -1,7 +1,8 @@
 import config from 'config'
+import cache from './cache.js'
 
 export default {
-  server: config.server,
+  server: Object.assign(config.server, { cache }),
   register: {
     plugins: [
       { plugin: './apps/auth' }
