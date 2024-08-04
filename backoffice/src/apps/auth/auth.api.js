@@ -11,7 +11,7 @@ export const login = async (request, h) => {
   }
 
   request.yar.set('user', login.user)
-  return h.response({ data: login.user }).code(status.CREATED)
+  return h.response({ data: login.user, message: request.t('home') }).code(status.CREATED)
 }
 
 export const logout = (_, h) => {

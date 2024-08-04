@@ -23,7 +23,7 @@ An opinionated Web application startup kit with a set of best practices.
 - [x] Configuration
 - [x] Authentication (with local PG user pool)
 - [x] Swagger Integration (available on `/docs`, SEE `backoffice/src/server/plugins/swagger.js`).
-- [ ] i18n Support
+- [x] i18n Support (`querystring` > `cookie` > `session` > `header`, i18n key: `lang`).
 - [x] Redis Integration
 - [ ] Kafka Connector
 - [ ] Standard Log (refer to [AWS Logging](https://docs.aws.amazon.com/prescriptive-guidance/latest/logging-monitoring-for-application-owners/event-attributes.html))

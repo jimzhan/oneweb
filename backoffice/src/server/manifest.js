@@ -21,6 +21,7 @@ export default {
       // hapi plugins
       { plugin: yar, options: config.yar },
       { plugin: pino, options: { redact: ['req.headers.authorization'] } },
+      { plugin: './server/plugins/i18n' },
       { plugin: './server/plugins/swagger' },
       // application routes
       { plugin: './apps/auth' }
