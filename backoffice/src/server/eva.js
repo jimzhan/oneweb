@@ -1,3 +1,5 @@
+import config from 'config'
+import urljoin from 'url-join'
 import { compose } from './server.js'
 // --------------------------------------------------------------------------------
 // Eva is abbreviation for `Evaluation`, serves as test helper for test cases.
@@ -6,7 +8,7 @@ const ask = async (path, method, options = {}) => {
   const api = await compose()
   options = Object.assign({}, options, {
     method,
-    url: path
+    url: urljoin(config.api.prefix, path)
   })
   const response = await api.inject(options)
   return response

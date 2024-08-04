@@ -24,7 +24,7 @@ export default {
       { plugin: './server/plugins/i18n' },
       { plugin: './server/plugins/swagger' },
       // application routes
-      { plugin: './apps/auth' }
+      { plugin: './apps/auth', routes: { prefix: config.api.prefix } }
     ]
   }
 }

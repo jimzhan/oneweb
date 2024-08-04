@@ -1,7 +1,10 @@
 ############################################################
 # settings shared across different environments.
 ############################################################
-# custom cache adaptor for env - based cache engine.
+api:
+  prefix:  /api
+  version: v1
+
 db:
   migrations:
     directory: ./db/migrations

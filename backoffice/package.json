@@ -41,7 +41,8 @@
     "joi": "^17.13.3",
     "knex": "^3.1.0",
     "nanoid": "^5.0.7",
-    "objection": "^3.1.4"
+    "objection": "^3.1.4",
+    "url-join": "^5.0.0"
   },
   "devDependencies": {
     "@hapi/inert": "^7.1.0",
