@@ -1,9 +1,6 @@
-import path from 'node:path'
 import * as fsx from './fsx.js'
 
-const root = fsx.dirname(import.meta, '..', '..');
-
-const pkg = await import(path.join(root, './package.json'), {
+const pkg = await import(fsx.join(import.meta, '..', '..', 'package.json'), {
   assert: { type: 'json' }
 })
 

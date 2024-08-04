@@ -4,7 +4,7 @@ import { fsx } from '../core/index.js'
 
 // @TODO `exiting`.
 
-const root = fsx.dirname(import.meta, '..')
+const root = fsx.join(import.meta, '..')
 
 export const compose = async () => await glue.compose(manifest, { relativeTo: root })
 

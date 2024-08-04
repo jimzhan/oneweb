@@ -10,11 +10,14 @@ import path from 'node:path'
 export const filename = (meta) => url.fileURLToPath(meta.url)
 
 /**
- * Usage: `fsx.dirname(import.meta)`  => 'core'
+ * Usage:
+ *    - `fsx.join(import.meta)`  => 'core'  - here like `__dirname`
+ *    - `fsx.join(import.meta, '..', '..')`  => project root.
+ *    - `fsx.join(import.meta, '..', '..', 'package.json')`.
  *
  * @param {import('node:module').Module} meta
  */
-export const dirname = (meta, ...segments) => {
+export const join = (meta, ...segments) => {
   const here = path.dirname(filename(meta))
   return segments.length > 0 ? path.join(here, ...segments) : here
 }

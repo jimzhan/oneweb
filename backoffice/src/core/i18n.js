@@ -7,7 +7,7 @@ import { LanguageDetector } from 'i18next-http-middleware'
 import * as fsx from './fsx.js'
 
 const key = 'lang' // default is `lng`.
-const basedir = fsx.dirname(import.meta, '../../i18n')
+const basedir = fsx.join(import.meta, '../../i18n')
 
 i18next
   .use(FS)
