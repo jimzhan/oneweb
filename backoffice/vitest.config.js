@@ -9,7 +9,7 @@ export default defineConfig({
     include: ['./(e2e|src)/**/*.spec.js'],
     exclude: [
       './src/**/index.js',
-      './src/server/asmt.js',
+      './src/server/eva.js',
       ...configDefaults.exclude
     ],
     reporters: ['default'],
@@ -22,7 +22,7 @@ export default defineConfig({
       exclude: [
         'src/**/index.js',
         'src/**/*.spec.js',
-        'src/server/asmt.js'
+        'src/server/eva.js'
       ],
       reporter: ['text', 'json', 'html']
     }

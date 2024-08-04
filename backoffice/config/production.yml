@@ -1,12 +1,6 @@
 # settings for production deployment <`process.env.NODE_ENV=production && process.env.NODE_CONFIG_ENV=production`>.
 stage: production
 
-cache:
-  name: RedisCache
-  adapter: redis
-  options:
-    partition: hapi-cache
-
 server:
   routes:
     cors:

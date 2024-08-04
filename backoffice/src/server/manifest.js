@@ -1,10 +1,21 @@
 import config from 'config'
 import yar from '@hapi/yar'
 import pino from 'hapi-pino'
-import cache from './cache.js'
+import IORedisMock from 'ioredis-mock'
+import { Engine as Redis } from '@hapi/catbox-redis'
+
+const loadCacheAdapter = () => {
+  config.server.cache.forEach(cache => {
+    cache.provider.constructor = Redis
+    if (process.env.NODE_ENV === 'test') {
+      cache.provider.options.client = new IORedisMock()
+    }
+  })
+  return config.server
+}
 
 export default {
-  server: Object.assign(config.server, { cache }),
+  server: loadCacheAdapter(),
   register: {
     plugins: [
       // hapi plugins
