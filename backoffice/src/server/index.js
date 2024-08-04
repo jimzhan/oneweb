@@ -1,2 +1,2 @@
 export * from './server.js'
-export * as eva from './eva.js'
+export { default as eva } from './eva.js'

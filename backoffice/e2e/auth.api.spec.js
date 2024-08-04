@@ -37,4 +37,9 @@ describe('AuthApi', async () => {
     })
     expect(response.statusCode).toBe(status.UNAUTHORIZED)
   })
+
+  it('should invalidate a logged into user session', async () => {
+    const response = await eva.delete('/sessions')
+    expect(response.statusCode).toBe(status.NO_CONTENT)
+  })
 })

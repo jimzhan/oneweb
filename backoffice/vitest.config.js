@@ -22,7 +22,8 @@ export default defineConfig({
       exclude: [
         'src/**/index.js',
         'src/**/*.spec.js',
-        'src/server/eva.js'
+        'src/server/eva.js',
+        'src/server/plugins/*.js'
       ],
       reporter: ['text', 'json', 'html']
     }

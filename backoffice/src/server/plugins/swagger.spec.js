@@ -1,4 +1,4 @@
-import * as eva from '../eva.js'
+import eva from '../eva.js'
 import status from 'http-status'
 import { expect, test } from 'vitest'
 

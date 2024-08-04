@@ -1,25 +1,37 @@
 import config from 'config'
 import urljoin from 'url-join'
+import assert from 'node:assert'
 import { compose } from './server.js'
-// --------------------------------------------------------------------------------
-// Eva is abbreviation for `Evaluation`, serves as test helper for test cases.
-// --------------------------------------------------------------------------------
-const ask = async (path, method, options = {}) => {
-  const api = await compose()
-  options = Object.assign({}, options, {
-    method,
-    url: urljoin(config.api.prefix, path)
-  })
-  const response = await api.inject(options)
-  return response
+
+const api = await compose()
+// ----------------------------------------------------------------------------------------------------
+// Eva is abbreviation for `Evaluation`, serves as test helper for test cases (`server.inflect`).
+// ----------------------------------------------------------------------------------------------------
+class Eva {
+  constructor() {
+    this.prefix = config.api.prefix
+    // Create a proxy to trap method calls
+    return new Proxy(this, {
+      get: (_, prop) => {
+        // Handle methods dynamically based on HTTP methods
+        const methods = ['get', 'post', 'put', 'delete', 'patch', 'head', 'options']
+        const method = prop.toLowerCase()
+        assert(methods.includes(method), `Method ${method} is not supported`)
+        return (...args) => this.ask(method, ...args)
+      }
+    })
+  }
+
+  /**
+   * @private
+   */
+  async ask(method, path, options = {}) {
+    options = Object.assign({}, options, {
+      method,
+      url: urljoin(this.prefix, path)
+    })
+    return await api.inject(options)
+  }
 }
 
-export const get = async (path, options) => ask(path, 'GET', options)
-
-export const post = async (path, options) => ask(path, 'POST', options)
-
-export const put = async (path, options) => ask(path, 'PUT', options)
-
-export const patch = async (path, options) => ask(path, 'PATCH', options)
-
-export const del = async (path, options) => ask(path, 'DELETE', options)
+export default new Eva()
