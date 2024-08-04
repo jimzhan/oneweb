@@ -26,8 +26,8 @@ An opinionated Web application startup kit with a set of best practices.
 - [x] i18n Support (`querystring` > `cookie` > `session` > `header`, i18n key: `lang`).
 - [x] Redis Integration
 - [ ] Kafka Connector
-- [ ] Standard Log (refer to [AWS Logging](https://docs.aws.amazon.com/prescriptive-guidance/latest/logging-monitoring-for-application-owners/event-attributes.html))
 - [ ] Server-Sent Event supports
+- [ ] Standard Log (refer to [AWS Logging](https://docs.aws.amazon.com/prescriptive-guidance/latest/logging-monitoring-for-application-owners/event-attributes.html))
 
 
 ## Bootstrap
@@ -40,6 +40,20 @@ yarn workspace backoffice db:init
 
 
 ## Folder Structrure (Grouped by Features) for Backoffice
+
+### Configuration Profiles
+
+1. `process.env.NODE_ENV=development`
+  - `process.env.NODE_CONFIG_ENV=localhost` - for local development ONLY, relevant services will be running with containers.
+
+2. `process.env.NODE_ENV=production` - for production deployment, relevant services will be running with actual production services.
+  - `process.env.NODE_CONFIG_ENV=dev` - with `dev` environment access credentials.
+  - `process.env.NODE_CONFIG_ENV=sit` - with `sit` environment access credentials.
+  - `process.env.NODE_CONFIG_ENV=uat` - with `uat` environment access credentials.
+  - `process.env.NODE_CONFIG_ENV=prod`- with `prod` environment access credentials.
+
+3. `process.env.NODE_ENV=test` - for test environment ONLY, relevant services will be running with mock services.
+
 
 ```bash
 ├── config                                  # Configuration
