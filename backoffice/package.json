@@ -7,7 +7,7 @@
   "author": "Jim Zhan <jim.zhan@me.com>",
   "license": "Apache-2.0",
   "scripts": {
-    "db:init": "yarn db:sync",
+    "db:init": "npm run db:sync && npm run db:seed",
     "db:sync": "knex migrate:latest",
     "db:new": "knex migrate:make",
     "db:up": "knex migrate:up",

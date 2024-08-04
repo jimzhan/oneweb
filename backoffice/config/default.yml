@@ -46,6 +46,8 @@ server:
 yar:
   name: sid
   storeBlank: false
+  cache:
+    cache: RedisSession
   cookieOptions:
     ttl: 7200000
     password: 9U7dsFz0zB5V9NL1NS5QKYwiOZFOoX3Q-8gh

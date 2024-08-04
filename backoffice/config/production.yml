@@ -8,3 +8,13 @@ server:
         - example.com
       credentials: true
     security: true
+
+  state:
+    strictHeader: true
+    ignoreErrors: false
+    isSecure: true
+    isHttpOnly: true
+    isSameSite: none
+    encoding: iron
+
+
