@@ -1,0 +1,10 @@
+# settings for DEV deployment <`process.env.NODE_ENV=production && `process.env.NODE_CONFIG_ENV=dev`>.
+stage: dev
+
+server:
+  routes:
+    cors:
+      origin:
+        - dev.example.com
+      credentials: true
+    security: true

@@ -1,11 +1,11 @@
-# settings for production deployment <`process.env.NODE_ENV=production && process.env.NODE_CONFIG_ENV=production`>.
-stage: production
+# settings for production deployment <`process.env.NODE_ENV=production && process.env.NODE_CONFIG_ENV=prd`>.
+stage: prd
 
 server:
   routes:
     cors:
       origin:
-        - example.com
+        - www.example.com
       credentials: true
     security: true
 

@@ -1,0 +1,10 @@
+# settings for SIT deployment <`process.env.NODE_ENV=production && `process.env.NODE_CONFIG_ENV=sit`>.
+stage: sit
+
+server:
+  routes:
+    cors:
+      origin:
+        - sit.example.com
+      credentials: true
+    security: true

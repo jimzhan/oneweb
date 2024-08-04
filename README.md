@@ -40,7 +40,7 @@ An opinionated Web application startup kit with a set of best practices.
   - `process.env.NODE_CONFIG_ENV=dev` - with `dev` environment access credentials.
   - `process.env.NODE_CONFIG_ENV=sit` - with `sit` environment access credentials.
   - `process.env.NODE_CONFIG_ENV=uat` - with `uat` environment access credentials.
-  - `process.env.NODE_CONFIG_ENV=prod`- with `prod` environment access credentials.
+  - `process.env.NODE_CONFIG_ENV=prd` - with `prd` environment access credentials.
 
 3. `process.env.NODE_ENV=test` - for test environment ONLY, relevant services will be running with mock services.
 
