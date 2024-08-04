@@ -5,6 +5,8 @@ const timeout = 30000
 export default defineConfig({
   globalSetup: './vitest.setup.js',
   test: {
+    globals: false,
+    environment: 'node',
     watch: false,
     include: ['./(e2e|src)/**/*.spec.js'],
     exclude: [
