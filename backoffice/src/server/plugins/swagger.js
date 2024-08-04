@@ -3,7 +3,7 @@ import vision from '@hapi/vision'
 import swagger from 'hapi-swagger'
 import { pkg } from '../../core/index.js'
 
-const { version, title } = pkg
+const { version, description } = pkg
 
 export const plugin = {
   name: 'swagger',
@@ -18,7 +18,7 @@ export const plugin = {
           documentationPath: '/docs',
           info: {
             version,
-            title
+            title: description
           }
         }
       }
