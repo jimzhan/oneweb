@@ -15,7 +15,6 @@ An opinionated Web application startup kit with a set of best practices.
 - **Test Runner** [Vitest](https://vitest.dev)
 - **Web Server** [hapi](https://hapi.dev/)
 - **i18n** [i18next](https://www.i18next.com/)
-- **Yarn Workspaces** [Monorepo with Yarn](https://yarnpkg.com/features/workspaces)
 
 
 ## TODOs
@@ -28,15 +27,6 @@ An opinionated Web application startup kit with a set of best practices.
 - [ ] Kafka Connector
 - [ ] Server-Sent Event supports
 - [ ] Standard Log (refer to [AWS Logging](https://docs.aws.amazon.com/prescriptive-guidance/latest/logging-monitoring-for-application-owners/event-attributes.html))
-
-
-## Bootstrap
-
-```shell
-yarn
-yarn workspace backoffice infra:up
-yarn workspace backoffice db:init
-```
 
 
 ## Folder Structrure (Grouped by Features) for Backoffice
