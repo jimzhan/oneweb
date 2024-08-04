@@ -2,12 +2,16 @@
 stage: localhost
 
 db:
-  client: better-sqlite3
-  useNullAsDefault: true
+  client: pg
   connection:
-    filename: ./test.sqlite3
-    options :
-      readonly: false
+    host: 127.0.0.1
+    port: 5432
+    user: postgres
+    database: postgres
+    password: 'postgres'
+    pool:
+      min: 5
+      max: 10
 
 server:
   routes:
@@ -16,3 +20,4 @@ server:
         - localhost:8000
       credentials: true
     security: true
+

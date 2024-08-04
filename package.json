@@ -45,6 +45,7 @@
     "knex": "^3.1.0",
     "nanoid": "^5.0.7",
     "objection": "^3.1.4",
+    "pg": "^8.12.0",
     "url-join": "^5.0.0"
   },
   "devDependencies": {
