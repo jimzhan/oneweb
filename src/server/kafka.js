@@ -1,8 +1,15 @@
 import config from 'config'
-import { Kafka } from 'kafkajs'
-import { pkg } from '../core/index.js'
+import Boom from '@hapi/boom'
+import { Kafka, CompressionTypes } from 'kafkajs'
 
 const noop = async () => { }
+const compression = CompressionTypes.GZIP
+const inner = {
+  kafka: null,
+  logger: null,
+  producer: null,
+  consumer: null
+}
 /**
  * Publish messages to the Kafka cluster.
  * SEEALSO [Producing]https://kafka.js.org/docs/producing)
@@ -12,16 +19,18 @@ const noop = async () => { }
  * @param {object[]} messages - array of messages, example: `[{ key: 'my-key', value: 'my-value'}]`
  */
 export const pub = async (topic, messages = []) => {
-  const kafka = new Kafka(config.kafka)
-  const producer = kafka.producer()
-  const logger = kafka.logger()
+  inner.kafka = inner.kafka || new Kafka(config.kafka)
+  inner.producer = inner.producer || inner.kafka.producer()
+  inner.logger = inner.logger || inner.kafka.logger()
+  const { producer, logger } = inner
 
   try {
     await producer.connect()
-    await producer.send({ topic, messages })
+    await producer.send({ topic, messages, compression })
     logger.info(`[producer] published <messages: ${messages.length}>} to <topic> ${topic}>`)
   } catch (ex) {
     logger.error(`[producer] ${ex.message}`, { stack: ex.stack })
+    throw Boom.badRequest()
   } finally {
     await producer.disconnect()
   }
@@ -32,9 +41,10 @@ export const pub = async (topic, messages = []) => {
  * @param {function} next - callback function.
  */
 export const sub = async (topics, next = noop) => {
-  const kafka = new Kafka(config.kafka)
-  const logger = kafka.logger()
-  const consumer = kafka.consumer({ groupId: pkg.name })
+  inner.kafka = inner.kafka || new Kafka(config.kafka)
+  inner.consumer = inner.consumer || inner.kafka.consumer()
+  inner.logger = inner.logger || inner.kafka.logger()
+  const { consumer, logger } = inner
 
   try {
     await consumer.connect()
@@ -48,6 +58,7 @@ export const sub = async (topics, next = noop) => {
     })
   } catch (ex) {
     logger.error(`[consumer] ${ex.message}`, { stack: ex.stack })
+    throw Boom.badRequest()
   } finally {
     await consumer.disconnect()
   }

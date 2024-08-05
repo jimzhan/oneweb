@@ -4,6 +4,7 @@ import pino from 'hapi-pino'
 import IORedisMock from 'ioredis-mock'
 import { Engine as Redis } from '@hapi/catbox-redis'
 
+/* istanbul ignore next 8 */
 const loadCacheAdapter = () => {
   config.server.cache.forEach(cache => {
     cache.provider.constructor = Redis
