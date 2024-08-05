@@ -35,13 +35,15 @@ export const sub = async (topics, next = noop) => {
   const kafka = new Kafka(config.kafka)
   const logger = kafka.logger()
   const consumer = kafka.consumer({ groupId: pkg.name })
+
   try {
     await consumer.connect()
     await consumer.subscribe({ topic: topics, fromBeginning: true })
     await consumer.run({
       eachMessage: async ({ topic, message }) => {
-        await next(topic, message)
-        logger.info(`[consumer] received <message: ${message.value}> from <topic: ${topic}>`)
+        next({ topic, message }).then(() => {
+          logger.info(`[consumer] received <message: ${message.value}> from <topic: ${topic}>`)
+        })
       }
     })
   } catch (ex) {

@@ -60,4 +60,19 @@ describe('kafka.pub/sub', () => {
     })
     expect(consumer.disconnect).toHaveBeenCalledTimes(1)
   })
+
+  it('consumes messages with `kafkajs', async () => {
+    const next = vi.fn(async () => true)
+    const message = { key: 'key', value: 'Hello Kafka' }
+
+    // Simulate an incoming message
+    consumer.run.mockImplementationOnce(({ eachMessage }) => {
+      eachMessage({ topic, partition: 0, message })
+    })
+
+    await kafka.sub(topic, next)
+
+    expect(next).toHaveBeenCalledTimes(1)
+    expect(next).toHaveBeenCalledWith(expect.objectContaining({ topic }))
+  })
 })
