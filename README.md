@@ -43,7 +43,7 @@ An opinionated Web application startup kit with a set of best practices.
 3. `process.env.NODE_ENV=test` - for test environment ONLY, relevant services will be running with mock services.
 
 
-## Folder Structrure (Grouped by Features) for Backoffice
+## Folder Structrure (Grouped by Features)
 
 ```bash
 ├── config                                  # Configuration
