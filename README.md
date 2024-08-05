@@ -24,14 +24,12 @@ An opinionated Web application startup kit with a set of best practices.
 - [x] Swagger Integration (available on `/docs`, SEE `backoffice/src/server/plugins/swagger.js`).
 - [x] i18n Support (`querystring` > `cookie` > `session` > `header`, i18n key: `lang`).
 - [x] Redis Integration
-- [ ] Kafka Connector
+- [x] Kafka Connector
 - [ ] Server-Sent Event supports
 - [ ] Standard Log (refer to [AWS Logging](https://docs.aws.amazon.com/prescriptive-guidance/latest/logging-monitoring-for-application-owners/event-attributes.html))
 
 
-## Folder Structrure (Grouped by Features) for Backoffice
-
-### Configuration Profiles
+## Configuration Profiles
 
 1. `process.env.NODE_ENV=development`
   - `process.env.NODE_CONFIG_ENV=localhost` - for local development ONLY, relevant services will be running with containers.
@@ -44,6 +42,8 @@ An opinionated Web application startup kit with a set of best practices.
 
 3. `process.env.NODE_ENV=test` - for test environment ONLY, relevant services will be running with mock services.
 
+
+## Folder Structrure (Grouped by Features) for Backoffice
 
 ```bash
 ├── config                                  # Configuration
