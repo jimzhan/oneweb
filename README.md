@@ -49,9 +49,12 @@ An opinionated Web application startup kit with a set of best practices.
 ├── config                                  # Configuration
 │   ├── custom-environment-variables.yml    # Custom environment variables with highest priority.
 │   ├── default.yml                         # default settings shared across all environments & deployments.
+│   ├── dev.yml                             # `process.env.NODE_ENV=production` && `process.env.NODE_CONFIG_ENV=dev`.
 │   ├── localhost.yml                       # `process.env.NODE_CONFIG_ENV=localhost`local devlopment settings.
+│   ├── prd.yml                             # `process.env.NODE_ENV=production` && `process.env.NODE_CONFIG_ENV=prd`.
+│   ├── sit.yml                             # `process.env.NODE_ENV=production` && `process.env.NODE_CONFIG_ENV=sit`.
 │   ├── test.yml                            # `process.env.NODE_ENV=test`.
-│   ├── uat.yml                             # `process.env.NODE_ENV=production` and `process.env.NODE_CONFIG_ENV=uat`.
+│   ├── uat.yml                             # `process.env.NODE_ENV=production` && `process.env.NODE_CONFIG_ENV=uat`.
 ├── db                                      # db's seeds and migrations.
 ├── e2e                                     # E2E test cases.
 ├── i18n                                    # i18n languages' supports.
