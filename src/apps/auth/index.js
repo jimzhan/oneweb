@@ -1,6 +1,6 @@
 import Boom from '@hapi/boom'
 import * as api from './auth.api.js'
-import * as v from './auth.schema.js'
+import * as v from './auth.v.js'
 // auth routes here.
 // ----------------------------------------------------------------------
 //  RESTful style user login/logout on top of session cookie.
