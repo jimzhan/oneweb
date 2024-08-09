@@ -4,6 +4,8 @@ import pino from 'hapi-pino'
 import IORedisMock from 'ioredis-mock'
 import { Engine as Redis } from '@hapi/catbox-redis'
 
+const prefix = config.api.prefix
+
 /* istanbul ignore next 8 */
 const loadCacheAdapter = () => {
   config.server.cache.forEach(cache => {
@@ -25,7 +27,8 @@ export default {
       { plugin: './server/plugins/i18n' },
       { plugin: './server/plugins/swagger' },
       // application routes
-      { plugin: './apps/auth', routes: { prefix: config.api.prefix } }
+      { plugin: './apps/auth', routes: { prefix } },
+      { plugin: './apps/users', routes: { prefix } }
     ]
   }
 }

@@ -7,7 +7,15 @@ import * as api from './users.api.js'
 const register = async (server) => {
   server.route([
     { method: 'POST', path: '/users', options: { tags: ['api'], handler: api.create } },
-    { method: 'GET', path: '/users', options: { tags: ['api'], handler: api.find } },
+    {
+      method: 'GET',
+      path: '/users',
+      options: {
+        tags: ['api'],
+        validate: { query: v.pagination },
+        handler: api.find
+      }
+    },
     {
       method: 'GET',
       path: '/users/{id}',

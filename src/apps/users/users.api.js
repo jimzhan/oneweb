@@ -9,13 +9,13 @@ export const create = async (request, h) => {
 }
 
 export const find = async (request, h) => {
-  const query = request.params
-  const users = await UserService.find(query)
+  const { params } = request
+  const users = await UserService.find(params)
   return h.response(users).code(status.OK)
 }
 
 export const get = async (request, h) => {
-  const id = request.params.id
+  const { id } = request.params
   const user = await UserService.get(id)
   if (!user) {
     throw Boom.notFound()

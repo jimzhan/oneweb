@@ -1,10 +1,10 @@
-import Knex from 'knex'
+import knex from 'knex'
 import Key from './key.js'
 import config from 'config'
 
-const knex = Knex(config.db)
+const db = knex(config.db)
 
-Object.defineProperties(knex, {
+Object.defineProperties(db, {
   Key: {
     writable: false,
     enumerable: false,
@@ -51,4 +51,4 @@ Object.defineProperties(knex, {
   }
 })
 
-export default knex
+export default db

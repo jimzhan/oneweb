@@ -1,5 +1,5 @@
+import db from '../../db/index.js'
 import { User } from '../auth/auth.models.js'
-import { knex } from '../../db/index.js'
 // ----------------------------------------
 // fine grained RBAC/ABAC here.
 // ----------------------------------------
@@ -15,7 +15,7 @@ export const create = async (data) => {
 
 export const find = async (params = {}) => {
   const query = User.query().select(...columns).orderBy('id')
-  const cursor = await knex.paginate(query, params)
+  const cursor = await db.paginate(query, params)
   return cursor
 }
 
@@ -25,7 +25,9 @@ export const get = async (id) => {
 }
 
 export const update = async (id, data) => {
-  const user = await User.query().select(...columns).patchAndFetchById(id, data)
+  // `patchAndFetchById` will ignore `select` option.
+  const user = await User.query().patchAndFetchById(id, data)
+  delete user.password
   return user
 }
 

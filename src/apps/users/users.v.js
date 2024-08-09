@@ -1,1 +1,1 @@
-export { id } from '../apps.v.js'
+export { id, pagination } from '../apps.v.js'

@@ -1,30 +1,22 @@
 import {
   afterEach,
-  beforeEach,
   describe,
   it,
   expect
 } from 'vitest'
 import { Key } from '../../db/index.js'
 import { User } from '../auth/auth.models.js'
-import { encrypt } from '../../core/secret.js'
 import * as UserService from './users.services.js'
 
+const domain = '@test.com'
+
 describe('users.services', () => {
-  const id = Key()
-  const username = `${id}@test.com`
-  const password = 'password'
-
-  beforeEach(async () => {
-    await User.query().insert({ username, password: await encrypt(password) })
-  })
-
   afterEach(async () => {
-    await User.query().whereRaw("username LIKE '%@test.com'").delete()
+    await User.query().whereRaw(`username LIKE '%@${domain}'`).delete()
   })
 
   it('create a new user & return it back without password', async () => {
-    const user = await UserService.create({ username: 'test@test.com', password: 'randompwd' })
+    const user = await UserService.create({ username: `${Key()}${domain}`, password: 'randompwd' })
     expect(user).toEqual({
       id: user.id,
       username: user.username
@@ -35,7 +27,7 @@ describe('users.services', () => {
   it('paginate list of user with cursor', async () => {
     const values = []
     Array.from({ length: 50 }).forEach(() => {
-      values.push({ username: `${Key()}@test.com`, password: Key() })
+      values.push({ username: `${Key()}${domain}`, password: Key() })
     })
     await User.query().insert(values)
 
@@ -54,5 +46,30 @@ describe('users.services', () => {
 
     const r3 = await UserService.find({ next: r2.links.next })
     expect(r3.data.length).toBeGreaterThan(10)
+    expect(r3.data[0].id > r1.data[0].id).toBeTruthy()
+    expect(r3.data[0].password).toBeUndefined()
+  })
+
+  it('get user by id', async () => {
+    const { id, username } = await User.query().insert({ username: `${Key()}${domain}`, password: Key() })
+    const user = await UserService.get(id)
+    expect(user).toBeTruthy()
+    expect(user.id).toBe(id)
+    expect(user.username).toBe(username)
+    expect(user.password).toBeUndefined()
+  })
+
+  it('update user by id', async () => {
+    const { id } = await User.query().insert({ username: `${Key()}${domain}`, password: Key() })
+    const username = `${Key()}${domain}`
+    const user = await UserService.update(id, { username })
+    expect(user.username).toBe(username)
+    expect(user.password).toBeUndefined()
+  })
+
+  it('delete user by id', async () => {
+    const { id } = await User.query().insert({ username: `${Key()}${domain}`, password: Key() })
+    const deleted = await UserService.remove(id)
+    expect(deleted).toBeTruthy()
   })
 })
