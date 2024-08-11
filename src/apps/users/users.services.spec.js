@@ -25,11 +25,10 @@ describe('users.services', () => {
   })
 
   it('paginate list of user with cursor', async () => {
-    const values = []
-    Array.from({ length: 50 }).forEach(() => {
-      values.push({ username: `${Key()}${domain}`, password: Key() })
+    Array.from({ length: 50 }).forEach(async () => {
+      // Batch insert is N/A on SQLite.
+      await User.query().insert({ username: `${Key()}${domain}`, password: Key() })
     })
-    await User.query().insert(values)
 
     // const query = { next: id }
     const r1 = await UserService.find()

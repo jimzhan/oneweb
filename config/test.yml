@@ -8,3 +8,10 @@ db:
     filename: ./test.sqlite3
     options :
       readonly: false
+
+kafka:
+  clientId: backoffice
+  brokers:
+    - 127.0.0.1:9092
+
+
