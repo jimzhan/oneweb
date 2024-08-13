@@ -81,7 +81,7 @@ module.exports = {
     },
     cookieOptions: {
       password: crypto.randomBytes(32).toString('base64url'),
-      ttl: 1000 * 60 * 60 * 24 * 7
+      ttl: 60 * 60 * 24 * 1000
     }
   }
 }
