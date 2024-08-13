@@ -34,6 +34,7 @@
     "bson": "^6.8.0",
     "config": "^3.3.12",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
     "exiting": "^7.0.0",
     "hapi-pino": "^12.1.0",
     "http-status": "^1.7.4",

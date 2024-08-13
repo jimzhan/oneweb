@@ -1,8 +1,8 @@
-const { nanoid } = require('nanoid')
+const crypto = require('crypto')
 const { Engine: Redis } = require('@hapi/catbox-redis')
-// ----------------------------------------
-// Production settings profile.
-// ----------------------------------------
+// ------------------------------------------------------------------------------------------
+// Production settings profile, must be overridden with `custom-environment-variables.yml`
+// ------------------------------------------------------------------------------------------
 module.exports = {
   db: {
     client: 'pg',
@@ -81,8 +81,8 @@ module.exports = {
       cache: 'RedisSession'
     },
     cookieOptions: {
-      password: nanoid(36),
-      ttl: 1000 * 60 * 60 * 24 * 7
+      password: crypto.randomBytes(32).toString('base64url'),
+      ttl: 60 * 60 * 24 * 1000
     }
   }
 }
