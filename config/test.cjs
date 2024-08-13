@@ -1,4 +1,4 @@
-const { uid } = require('uid/secure')
+const crypto = require('crypto')
 const IORedisMock = require('ioredis-mock')
 const { Engine: Redis } = require('@hapi/catbox-redis')
 // ----------------------------------------
@@ -80,7 +80,7 @@ module.exports = {
       cache: 'RedisSession'
     },
     cookieOptions: {
-      password: uid(36),
+      password: crypto.randomBytes(32).toString('base64url'),
       ttl: 1000 * 60 * 60 * 24 * 7
     }
   }
