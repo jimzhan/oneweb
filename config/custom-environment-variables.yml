@@ -45,40 +45,11 @@ server:
 #      provider: Redis
 #      options:
 #        partition: session
-  router:
-    isCaseSensitive:
-      __name: ROUTER_IS_CASE_SENSITIVE
-      __format: boolean
-    stripTrailingSlash:
-      __name: ROUTER_STRIP_TRAILING_SLASH
-      __format: boolean
   routes:
     cors:
       origin:
-        __name: ROUTER_CORS_ORIGIN
+        __name: CORS_ORIGIN
         __format: json
-      credentials:
-        __name: ROUTER_CORS_CREDENTIALS
-        __format: boolean
-    security:
-      __name: ROUTER_SECURITY
-      __format: boolean
-  state:
-   strictHeader:
-     __name: STATE_STRICT_HEADER
-     __format: boolean
-   ignoreErrors:
-    __name: STATE_IGNORE_ERRORS
-    __format: boolean
-   isSecure:
-    __name: STATE_IS_SECURE
-    __format: boolean
-   isHttpOnly:
-      __name: STATE_IS_HTTP_ONLY
-      __format: boolean
-   isSameSite: STATE_IS_SAME_SITE
-   encoding: STATE_ENCODING
-
 
 yar:
   name: YAR_NAME

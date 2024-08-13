@@ -26,6 +26,10 @@ describe('config', async () => {
     // server settings
     process.env.HOST = 'www.example.com'
     process.env.PORT = '80'
+    process.env.CORS_ORIGIN = "['www.example.com']"
+    // yar cookie settings
+    process.env.YAR_NAME = 'yar_name'
+    process.env.YAR_STORE_BLANK = 'true'
 
     const { default: config } = await import('config')
     // db settings
@@ -45,5 +49,10 @@ describe('config', async () => {
     // server settings
     expect(config.server.host).toBe('www.example.com')
     expect(config.server.port).toBe(80)
+    expectTypeOf(config.server.routes.cors.origin).toBeArray()
+    expect(config.server.routes.cors.origin[0]).toBe('www.example.com')
+    // yar cookie settings
+    expect(config.yar.name).toBe('yar_name')
+    expect(config.yar.storeBlank).toBe(true)
   })
 })

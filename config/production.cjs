@@ -59,8 +59,8 @@ module.exports = {
     },
     routes: {
       cors: {
-        origin: ['*'],
-        credentials: false
+        origin: ['www.example.com'],
+        credentials: true
       },
       security: true
     },
@@ -69,7 +69,7 @@ module.exports = {
       ignoreErrors: false,
       isSecure: true,
       isHttpOnly: true,
-      isSameSite: 'Lax',
+      isSameSite: 'None',
       encoding: 'iron'
     }
   },
