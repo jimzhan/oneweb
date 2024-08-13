@@ -4,5 +4,6 @@
 module.exports = {
   api: {
     prefix: '/api'
-  }
+  },
+  stage: 'development'
 }

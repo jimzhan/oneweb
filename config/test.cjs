@@ -1,4 +1,4 @@
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 const IORedisMock = require('ioredis-mock')
 const { Engine: Redis } = require('@hapi/catbox-redis')
 // ----------------------------------------

@@ -31,15 +31,8 @@ An opinionated Web application startup kit with a set of best practices.
 
 ## Configuration Profiles
 
-1. `process.env.NODE_ENV=development`
-  - `process.env.NODE_CONFIG_ENV=localhost` - for local development ONLY, relevant services will be running with containers.
-
+1. `process.env.NODE_ENV=development` - for local development ONLY, relevant services will be running with containers.
 2. `process.env.NODE_ENV=production` - for production deployment, relevant services will be running with actual production services.
-  - `process.env.NODE_CONFIG_ENV=dev` - with `dev` environment access credentials.
-  - `process.env.NODE_CONFIG_ENV=sit` - with `sit` environment access credentials.
-  - `process.env.NODE_CONFIG_ENV=uat` - with `uat` environment access credentials.
-  - `process.env.NODE_CONFIG_ENV=prd` - with `prd` environment access credentials.
-
 3. `process.env.NODE_ENV=test` - for test environment ONLY, relevant services will be running with mock services.
 
 
@@ -48,13 +41,10 @@ An opinionated Web application startup kit with a set of best practices.
 ```bash
 ├── config                                  # Configuration
 │   ├── custom-environment-variables.yml    # Custom environment variables with highest priority.
-│   ├── default.yml                         # default settings shared across all environments & deployments.
-│   ├── dev.yml                             # `process.env.NODE_ENV=production` && `process.env.NODE_CONFIG_ENV=dev`.
-│   ├── localhost.yml                       # `process.env.NODE_CONFIG_ENV=localhost`local devlopment settings.
-│   ├── prd.yml                             # `process.env.NODE_ENV=production` && `process.env.NODE_CONFIG_ENV=prd`.
-│   ├── sit.yml                             # `process.env.NODE_ENV=production` && `process.env.NODE_CONFIG_ENV=sit`.
-│   ├── test.yml                            # `process.env.NODE_ENV=test`.
-│   ├── uat.yml                             # `process.env.NODE_ENV=production` && `process.env.NODE_CONFIG_ENV=uat`.
+│   ├── default.cjs                         # default settings shared across all environments & deployments.
+│   ├── development.cjs                     # `process.env.NODE_ENV=development`local devlopment settings.
+│   ├── production.cjs                      # `process.env.NODE_ENV=production` for production settings.
+│   ├── test.cjs                            # `process.env.NODE_ENV=test`.
 ├── db                                      # db's seeds and migrations.
 ├── e2e                                     # E2E test cases.
 ├── i18n                                    # i18n languages' supports.

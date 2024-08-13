@@ -30,6 +30,8 @@ describe('config', async () => {
     // yar cookie settings
     process.env.YAR_NAME = 'yar_name'
     process.env.YAR_STORE_BLANK = 'true'
+    process.env.YAR_SECRET = 'yar_secret'
+    process.env.YAR_TTL = '1234567890'
 
     const { default: config } = await import('config')
     // db settings
@@ -54,5 +56,7 @@ describe('config', async () => {
     // yar cookie settings
     expect(config.yar.name).toBe('yar_name')
     expect(config.yar.storeBlank).toBe(true)
+    expect(config.yar.cookieOptions.password).toBe('yar_secret')
+    expect(config.yar.cookieOptions.ttl).toBe(1234567890)
   })
 })

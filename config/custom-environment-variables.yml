@@ -1,6 +1,8 @@
 ############################################################
 # Highest priority for production settings.
 ############################################################
+stage: STAGE
+
 db:
   client: pg
   connection:
@@ -59,7 +61,7 @@ yar:
   cache:
     cache: YAR_CACHE
   cookieOptions:
-    password: YAR_COOKIE_OPTIONS_PASSWORD
+    password: YAR_SECRET
     ttl:
-      __name: YAR_COOKIE_OPTIONS_TTL
+      __name: YAR_TTL
       __format: number
