@@ -34,6 +34,7 @@
     "bson": "^6.8.0",
     "config": "^3.3.12",
     "cross-env": "^7.0.3",
+    "deep-diff": "^1.0.2",
     "dotenv": "^16.4.5",
     "exiting": "^7.0.0",
     "hapi-pino": "^12.1.0",
@@ -50,6 +51,7 @@
     "objection": "^3.1.4",
     "objection-cursor": "^1.2.6",
     "pg": "^8.12.0",
+    "ulidx": "^2.4.0",
     "url-join": "^5.0.0"
   },
   "devDependencies": {
