@@ -14,6 +14,12 @@ module.exports = {
         readonly: false
       }
     },
+    pool: {
+      afterCreate: (conn, next) => {
+        conn.pragma('foreign_keys = ON')
+        next()
+      }
+    },
     migrations: {
       directory: './db/migrations'
     },
