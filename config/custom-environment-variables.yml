@@ -20,10 +20,6 @@ db:
       max:
         __name: DB_POOL_MAX
         __format: number
-  migrations:
-    directory: DB_MIGRATIONS_DIR
-  seeds:
-    directory: DB_SEEDS_DIR
 
 
 kafka:

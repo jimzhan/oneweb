@@ -18,8 +18,6 @@ describe('config', async () => {
     process.env.DB_PASS = 'db_pass'
     process.env.DB_POOL_MIN = '5'
     process.env.DB_POOL_MAX = '10'
-    process.env.DB_MIGRATIONS_DIR = 'db_migrations_dir'
-    process.env.DB_SEEDS_DIR = 'db_seeds_dir'
     // Kafka settings
     process.env.KAFKA_CLIENT_ID = 'kafka_client_id'
     process.env.KAFKA_BROKERS = '["kafka_brokers"]'
@@ -42,8 +40,6 @@ describe('config', async () => {
     expect(config.db.connection.password).toBe('db_pass')
     expect(config.db.connection.pool.min).toBe(5)
     expect(config.db.connection.pool.max).toBe(10)
-    expect(config.db.migrations.directory).toBe('db_migrations_dir')
-    expect(config.db.seeds.directory).toBe('db_seeds_dir')
     // kafka settings
     expect(config.kafka.clientId).toBe('kafka_client_id')
     expectTypeOf(config.kafka.brokers).toBeArray()
