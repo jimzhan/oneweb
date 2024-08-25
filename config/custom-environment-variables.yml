@@ -51,9 +51,6 @@ server:
 
 yar:
   name: YAR_NAME
-  storeBlank:
-    __name: YAR_STORE_BLANK
-    __format: boolean
   cache:
     cache: YAR_CACHE
   cookieOptions:
