@@ -32,6 +32,7 @@
     "@hapipal/confidence": "^6.0.2",
     "argon2": "^0.40.3",
     "bson": "^6.8.0",
+    "cls-rtracer": "^2.6.3",
     "config": "^3.3.12",
     "cross-env": "^7.0.3",
     "deep-diff": "^1.0.2",

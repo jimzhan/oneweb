@@ -1,7 +1,7 @@
-import { Cursor, Model } from '../../db/index.js'
+import { Model } from '../../db/index.js'
 import { regex, secret } from '../../core/index.js'
 
-export class User extends Cursor(Model) {
+export class User extends Model {
   static get tableName() {
     return 'users'
   }

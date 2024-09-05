@@ -1,6 +1,7 @@
 import config from 'config'
 import yar from '@hapi/yar'
 import pino from 'hapi-pino'
+import tracer from 'cls-rtracer'
 import IORedisMock from 'ioredis-mock'
 import { Engine as Redis } from '@hapi/catbox-redis'
 
@@ -26,6 +27,7 @@ export default {
       { plugin: pino, options: { redact: ['req.headers.authorization'] } },
       { plugin: './server/plugins/i18n' },
       { plugin: './server/plugins/swagger' },
+      { plugin: tracer.hapiPlugin },
       // application routes
       { plugin: './apps/auth', routes: { prefix } },
       { plugin: './apps/users', routes: { prefix } }

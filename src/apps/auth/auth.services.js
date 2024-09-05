@@ -1,3 +1,4 @@
+import tracer from 'cls-rtracer'
 import { User } from './auth.models.js'
 import { verify } from '../../core/secret.js'
 
@@ -17,6 +18,8 @@ export const authenticate = async (username, password) => {
     delete user.password
     Object.assign(login, { user, authenticated })
   }
+
+  console.log(`[auth.srv]<traceId: ${tracer.id()}>`)
 
   return login
 }

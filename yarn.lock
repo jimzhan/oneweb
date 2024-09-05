@@ -1446,6 +1446,13 @@ cli-truncate@^4.0.0:
     slice-ansi "^5.0.0"
     string-width "^7.0.0"
 
+cls-rtracer@^2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/cls-rtracer/-/cls-rtracer-2.6.3.tgz#316b39718b82b159b3c6021f6d043c7ae899a93e"
+  integrity sha512-O7M/m2M/KfT9v+q7ka9nmsadS67ce9P8+1Zgm6VFamK56oFd1iCoJ9m8hYKUQpK4+RofyaexxHJlOBkxqCDs3Q==
+  dependencies:
+    uuid "^9.0.0"
+
 cluster-key-slot@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/cluster-key-slot/-/cluster-key-slot-1.1.2.tgz#88ddaa46906e303b5de30d3153b7d9fe0a0c19ac"
@@ -4400,6 +4407,11 @@ util-deprecate@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
+
+uuid@^9.0.0:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.1.tgz#e188d4c8853cc722220392c424cd637f32293f30"
+  integrity sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==
 
 validator@^13.7.0:
   version "13.12.0"
