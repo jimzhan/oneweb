@@ -1,7 +1,7 @@
+import fs from 'node:fs'
 import path from 'node:path'
 import i18next from 'i18next'
 import FS from 'i18next-fs-backend'
-import { lstatSync, readdirSync } from 'node:fs'
 import { LanguageDetector } from 'i18next-http-middleware'
 
 import * as fsx from './fsx.js'
@@ -18,9 +18,9 @@ i18next
     ns: ['areas', 'message'],
     defaultNS: 'message',
     fallbackLng: 'en-us',
-    preload: readdirSync(basedir).filter((filename) => {
+    preload: fs.readdirSync(basedir).filter((filename) => {
       const langdir = path.join(basedir, filename)
-      return lstatSync(langdir).isDirectory()
+      return fs.lstatSync(langdir).isDirectory()
     }),
     backend: {
       loadPath: path.join(basedir, '{{ lng }}/{{ ns }}.json')
