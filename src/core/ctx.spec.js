@@ -10,6 +10,11 @@ describe('ctx.js', () => {
     expect(ctx.get('404')).toBeUndefined()
   })
 
+  it('should set value for async context', () => {
+    ctx.set({ abc: 'xyz' })
+    expect(ctx.get('abc')).toBe('xyz')
+  })
+
   it('should get `bar` where ctx has `foo`', () => {
     ctx.run({ foo: 'bar' }, () => {
       expect(ctx.get('foo')).toBe('bar')
