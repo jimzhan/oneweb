@@ -560,6 +560,14 @@
     "@hapi/cryptiles" "^6.0.1"
     "@hapi/hoek" "^11.0.2"
 
+"@hapi/log@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@hapi/log/-/log-2.0.1.tgz#f30626fdd6b5d3f2d33d2a3c4a7d7ce6b1735480"
+  integrity sha512-xRjIIJzkzoKP1k+FAhyYyp+80+gXCa16vteuj6CrXYZ1FSHH4AxroRcQf/CCzoYjMOVARHhib3DUW0ME9vEQ2Q==
+  dependencies:
+    "@hapi/hoek" "^11.0.2"
+    "@hapi/validate" "^2.0.1"
+
 "@hapi/mimos@^7.0.1":
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/@hapi/mimos/-/mimos-7.0.1.tgz#5b65c76bb9da28ba34b0092215891f2c72bc899d"
@@ -820,6 +828,16 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@opentelemetry/api@^1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/api/-/api-1.9.0.tgz#d03eba68273dc0f7509e2a3d5cba21eae10379fe"
+  integrity sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==
+
+"@opentelemetry/context-async-hooks@^1.26.0":
+  version "1.26.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/context-async-hooks/-/context-async-hooks-1.26.0.tgz#fa92f722cf685685334bba95f258d3ef9fce60f6"
+  integrity sha512-HedpXXYzzbaoutw6DFLWLDket2FwLkLpil4hGCZ1xYEIMTcivdfwEOISgdbLEWyG3HW52gTq2V9mOVJrONgiwg==
 
 "@phc/format@^1.0.0":
   version "1.0.0"
@@ -1401,7 +1419,7 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@~5.3.0:
+chalk@^5.3.0, chalk@~5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.3.0.tgz#67c20a7ebef70e7f3970a01f90fa210cb6860385"
   integrity sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==

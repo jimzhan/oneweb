@@ -1,6 +1,5 @@
 import Boom from '@hapi/boom'
 import status from 'http-status'
-import tracer from 'cls-rtracer'
 import * as AuthService from './auth.services.js'
 
 export const login = async (request, h) => {
@@ -10,9 +9,6 @@ export const login = async (request, h) => {
   if (!login.authenticated) {
     throw Boom.unauthorized()
   }
-
-  request.log(`[auth.api]<traceId: ${tracer.id()}>`)
-
   request.yar.set('user', login.user)
   return h.response({ data: login.user, message: request.t('home') }).code(status.CREATED)
 }
