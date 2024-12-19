@@ -1,0 +1,10 @@
+{
+  "name": "oneweb",
+  "version": "0.1.0",
+  "description": "OneWeb Backoffice API Services",
+  "main": "src/index.js",
+  "repository": "https://github.com/jimzhan/oneweb.git",
+  "author": "Jim Zhan <jim.zhan@me.com>",
+  "license": "Apache-2.0",
+  "private": true
+}
