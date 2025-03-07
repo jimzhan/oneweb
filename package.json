@@ -24,6 +24,9 @@
     "cross-env": "^7.0.3",
     "esm-module-alias": "^2.2.1",
     "exiting": "^7.0.0",
+    "i18next": "^24.2.2",
+    "i18next-fs-backend": "^2.6.0",
+    "i18next-http-middleware": "^3.7.1",
     "immutable": "^5.0.3"
   },
   "devDependencies": {
