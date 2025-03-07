@@ -16,6 +16,9 @@
   },
   "dependencies": {
     "@hapi/glue": "^9.0.1",
+    "@hapi/hapi": "^21.4.0",
+    "@hapi/log": "^2.0.1",
+    "@hapi/yar": "^11.0.2",
     "@hapipal/confidence": "^6.0.2",
     "cross-env": "^7.0.3",
     "esm-module-alias": "^2.2.1",
