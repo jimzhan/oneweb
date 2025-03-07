@@ -12,6 +12,8 @@
     "@settings": "settings/index.js"
   },
   "scripts": {
+    "infra:up": "docker-compose --file infra/docker-compose.yml up -d",
+    "infra:stop": "docker-compose --file infra/docker-compose.yml stop",
     "start": "cross-env NODE_ENV=production node --loader esm-module-alias/loader --no-warnings ./src/index.js",
     "watch": "cross-env NODE_ENV=development nodemon --loader esm-module-alias/loader --no-warnings ./src/index.js"
   },
