@@ -1,8 +1,7 @@
 import Exiting from 'exiting'
-import { compose } from './server/server.js'
+import { server } from './server/index.js'
 
 try {
-  const server = await compose()
   const manager = Exiting.createManager(server)
   await manager.start()
   console.log(`Server is listening on ${server.info.uri}`)
