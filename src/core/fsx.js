@@ -1,8 +1,6 @@
 import url from 'node:url'
 import path from 'node:path'
 
-export const root = join(import.meta, '..', '..')
-
 // drop-in replacement for `__filename`, `__dirname` and `require` in commonjs.
 
 /**
