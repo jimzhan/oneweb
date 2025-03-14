@@ -17,6 +17,9 @@ const internals = {
 
 internals.settings = {
   $meta: 'application settings file',
+  api: {
+    prefix: '/api'
+  },
   server
 }
 
