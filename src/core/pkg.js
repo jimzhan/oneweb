@@ -1,7 +1,4 @@
-import * as fsx from './fsx.js'
+import pkg from '../../package.json' with { type: 'json' }
 
-const pkg = await import(fsx.join(import.meta, '..', '..', 'package.json'), {
-  assert: { type: 'json' }
-})
+export default pkg
 
-export default pkg.default

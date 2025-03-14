@@ -1,5 +1,8 @@
 import url from 'node:url'
 import path from 'node:path'
+
+export const root = join(import.meta, '..', '..')
+
 // drop-in replacement for `__filename`, `__dirname` and `require` in commonjs.
 
 /**
@@ -16,6 +19,7 @@ export const filename = (meta) => url.fileURLToPath(meta.url)
  *    - `fsx.join(import.meta, '..', '..', 'package.json')`.
  *
  * @param {import('node:module').Module} meta
+ * @param {...string} segments - path segments
  */
 export const join = (meta, ...segments) => {
   const here = path.dirname(filename(meta))

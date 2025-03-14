@@ -3,18 +3,21 @@
   "type": "module",
   "version": "0.1.0",
   "description": "OneWeb Backoffice API Services",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/jimzhan/oneweb",
   "author": "jimzhan <jim.zhan@me.com>",
   "license": "Apache-2.0",
   "private": false,
   "aliases": {
-    "@settings": "settings/index.js"
+    "settings": "settings/index.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   },
   "scripts": {
     "infra:up": "docker-compose --file infra/docker-compose.yml up -d",
     "infra:stop": "docker-compose --file infra/docker-compose.yml stop",
-    "start": "cross-env NODE_ENV=production node --loader esm-module-alias/loader --no-warnings ./src/index.js",
+    "start": "cross-env NODE_ENV=production node --no-experimental-require-module --loader esm-module-alias/loader --no-warnings ./src/index.js",
     "watch": "cross-env NODE_ENV=development nodemon --loader esm-module-alias/loader --no-warnings ./src/index.js"
   },
   "dependencies": {
