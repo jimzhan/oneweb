@@ -9,5 +9,9 @@ export default {
   environmentVariables: {},
   verbose: true,
   require: [],
-  nodeArguments: []
+  nodeArguments: [
+    '--no-warnings',
+    '--loader=esm-module-alias/loader',
+    '--no-experimental-require-module'
+  ]
 }
