@@ -19,7 +19,7 @@
     "infra:stop": "docker-compose --file infra/docker-compose.yml stop",
     "lint": "eslint --fix --ignore-path .eslintignore",
     "start": "cross-env NODE_ENV=production node --no-experimental-require-module --loader esm-module-alias/loader --no-warnings ./src/index.js",
-    "watch": "cross-env NODE_ENV=development nodemon --loader esm-module-alias/loader --no-warnings ./src/index.js",
+    "watch": "cross-env NODE_ENV=development nodemon  ./src/index.js",
     "test": "c8 ava"
   },
   "dependencies": {

@@ -5,7 +5,7 @@
   "ext": "cjs,js",
   "ignore": ["*.spec.js", "*.test.js", "**/fixtures/**"],
   "execMap": {
-    "js": "node --inspect"
+    "js": "node --inspect --no-experimental-require-module --loader esm-module-alias/loader --no-warnings"
   },
   "env": {
     "NODE_DEBUG": 9229,
