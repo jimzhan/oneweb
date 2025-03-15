@@ -1,6 +1,7 @@
 export default {
   files: [
-    'src/**/*.spec.js'
+    'src/**/*.spec.js',
+    '!**/*.cjs'
   ],
   match: [],
   concurrency: 5,
