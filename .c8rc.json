@@ -3,6 +3,8 @@
 	"exclude": [
 		"{coverage,examples,media,test,test-types,test-tap,types,settings}/**",
 		"ava.config.js",
+    ".eslintrc.cjs",
+    "**/*.spec.js",
     "**/index.js"
 	],
 	"reporter": [
